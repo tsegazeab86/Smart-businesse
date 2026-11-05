@@ -1,0 +1,777 @@
+
+/* ==========================================
+   SMART BUSINESS
+   PREMIUM SELLER SALES REPORT
+========================================== */
+
+.seller-sales-page {
+  --ssr-primary: #123c73;
+  --ssr-dark: #102344;
+  --ssr-accent: #00b8d9;
+  --ssr-text: #243b58;
+  --ssr-muted: #64748b;
+  --ssr-border: #e3eaf3;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 36px;
+
+  background: linear-gradient(
+    145deg,
+    #f5f8fd 0%,
+    #eef4fb 100%
+  );
+
+  color: var(--ssr-text);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+.seller-sales-page *,
+.seller-sales-page *::before,
+.seller-sales-page *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.ssr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.ssr-eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #087da5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.ssr-header h1 {
+  margin: 0 0 10px;
+
+  color: var(--ssr-dark);
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.ssr-header p {
+  margin: 0;
+
+  color: var(--ssr-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* REFRESH BUTTON */
+
+.ssr-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 12px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #123c73,
+    #1764a3
+  );
+
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 18px rgba(18, 60, 115, 0.16);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ssr-refresh:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 23px rgba(18, 60, 115, 0.22);
+}
+
+.ssr-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   BREADCRUMB NAVIGATION
+========================================== */
+
+.ssr-navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  margin-bottom: 30px;
+
+  color: #7b8ba2;
+  font-size: 14px;
+}
+
+.ssr-navigation a {
+  color: #087da5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ssr-navigation a:hover {
+  text-decoration: underline;
+}
+
+.ssr-navigation strong {
+  color: var(--ssr-primary);
+  font-weight: 700;
+}
+
+/* ==========================================
+   STATISTICS CARDS
+========================================== */
+
+.ssr-summary {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.ssr-summary-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 190px;
+
+  padding: 25px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--ssr-border);
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 10px rgba(16, 35, 68, 0.02),
+    0 12px 30px rgba(16, 35, 68, 0.035);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ssr-summary-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #123c73,
+    #00b8d9
+  );
+}
+
+.ssr-summary-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #cbdcf0;
+
+  box-shadow: 0 16px 35px rgba(16, 35, 68, 0.09);
+}
+
+/* CARD ICON */
+
+.ssr-summary-icon {
+  display: grid;
+  place-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 20px;
+
+  border-radius: 15px;
+
+  background: #edf5ff;
+
+  font-size: 24px;
+}
+
+.ssr-summary-card:nth-child(2) .ssr-summary-icon {
+  background: #e8f8f2;
+}
+
+.ssr-summary-card:nth-child(3) .ssr-summary-icon {
+  background: #fff3e5;
+}
+
+.ssr-summary-card:nth-child(4) .ssr-summary-icon {
+  background: #f0edff;
+}
+
+/* CARD LABEL */
+
+.ssr-summary-card > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #52657e;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* CARD VALUE */
+
+.ssr-summary-card h2 {
+  margin: 0 0 10px;
+
+  color: #102344;
+
+  font-size: clamp(22px, 2vw, 29px);
+  font-weight: 800;
+
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+
+  overflow-wrap: anywhere;
+}
+
+.ssr-summary-card h2 small {
+  color: #52657e;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ssr-summary-card p {
+  margin: 0;
+
+  color: #718199;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   MAIN PANELS
+========================================== */
+
+.ssr-panel {
+  min-width: 0;
+
+  margin-bottom: 28px;
+  padding: 30px;
+
+  border: 1px solid var(--ssr-border);
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 12px rgba(16, 35, 68, 0.02),
+    0 12px 32px rgba(16, 35, 68, 0.035);
+}
+
+/* PANEL HEADER */
+
+.ssr-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.ssr-panel-heading h2 {
+  margin: 0 0 9px;
+
+  color: #102344;
+
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+}
+
+.ssr-panel-heading p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* MANAGE PRODUCTS LINK */
+
+.ssr-products-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 16px;
+
+  border: 1px solid #d9eaf5;
+  border-radius: 10px;
+
+  background: #f0f8fd;
+
+  color: #087da5;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: background 0.2s ease;
+}
+
+.ssr-products-link:hover {
+  background: #dff3fb;
+}
+
+/* ==========================================
+   SALES CHART
+========================================== */
+
+.ssr-chart-scroll {
+  width: 100%;
+  overflow-x: auto;
+
+  padding: 20px 5px 12px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.ssr-chart {
+  display: flex;
+  align-items: stretch;
+
+  gap: 20px;
+
+  min-width: 600px;
+  height: 330px;
+}
+
+.ssr-chart-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 58px;
+  gap: 12px;
+}
+
+/* SALES VALUES ABOVE BARS */
+
+.ssr-chart-value {
+  color: #304866;
+
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* CHART BACKGROUND */
+
+.ssr-chart-track {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 100%;
+
+  border-bottom: 2px solid #dbe5f0;
+
+  background: repeating-linear-gradient(
+    to top,
+    #edf2f8 0,
+    #edf2f8 1px,
+    transparent 1px,
+    transparent 25%
+  );
+}
+
+/* CHART BARS */
+
+.ssr-chart-bar {
+  width: 65%;
+  max-width: 60px;
+  min-height: 2px;
+
+  border-radius: 9px 9px 0 0;
+
+  background: linear-gradient(
+    180deg,
+    #00b8d9 0%,
+    #1681bc 45%,
+    #123c73 100%
+  );
+
+  box-shadow: 0 4px 10px rgba(0, 184, 217, 0.12);
+
+  transition:
+    height 0.4s ease,
+    filter 0.2s ease;
+}
+
+.ssr-chart-bar:hover {
+  filter: brightness(1.15);
+}
+
+/* MONTH LABEL */
+
+.ssr-chart-label {
+  color: #52657e;
+
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   BEST SELLING PRODUCTS TABLE
+========================================== */
+
+.ssr-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+}
+
+.ssr-table {
+  width: 100%;
+  min-width: 580px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  text-align: left;
+}
+
+/* TABLE HEADER */
+
+.ssr-table thead {
+  background: #f1f6fc;
+}
+
+.ssr-table th {
+  padding: 18px 20px;
+
+  color: #405675;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* TABLE ROWS */
+
+.ssr-table td {
+  padding: 20px;
+
+  border-bottom: 1px solid #edf1f6;
+
+  color: #405675;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  vertical-align: middle;
+}
+
+.ssr-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.ssr-table tbody tr:hover {
+  background: #f5faff;
+}
+
+.ssr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ssr-table td strong {
+  color: #173459;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+/* PRODUCT RANK */
+
+.ssr-rank {
+  display: inline-grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+
+  background: #eaf2ff;
+  color: #1769e0;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ssr-table tbody tr:nth-child(1) .ssr-rank {
+  background: #fff2d6;
+  color: #a66a00;
+}
+
+.ssr-table tbody tr:nth-child(2) .ssr-rank {
+  background: #edf0f5;
+  color: #52657e;
+}
+
+.ssr-table tbody tr:nth-child(3) .ssr-rank {
+  background: #fff0e5;
+  color: #a65d2b;
+}
+
+/* REVENUE COLUMN */
+
+.ssr-table .ssr-revenue {
+  color: #087f64;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================
+   EMPTY AND LOADING STATES
+========================================== */
+
+.ssr-empty,
+.ssr-message {
+  padding: 65px 24px;
+
+  border: 1px dashed #d8e4f0;
+  border-radius: 15px;
+
+  background: #f9fbfe;
+
+  color: #64748b;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+/* ==========================================
+   ERROR MESSAGE
+========================================== */
+
+.ssr-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  padding: 18px 20px;
+  margin-bottom: 24px;
+
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+
+  background: #fff1f2;
+  color: #b42318;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ssr-error button {
+  padding: 10px 17px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #b42318;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.ssr-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  padding: 20px 0;
+
+  border-top: 1px solid #dfe7f1;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.ssr-refresh:focus-visible,
+.ssr-products-link:focus-visible,
+.ssr-navigation a:focus-visible,
+.ssr-error button:focus-visible {
+  outline: 3px solid #00b8d9;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 1200px) {
+  .ssr-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .seller-sales-page {
+    padding: 28px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 650px) {
+  .seller-sales-page {
+    padding: 18px 14px;
+  }
+
+  .ssr-header {
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .ssr-header h1 {
+    font-size: 27px;
+  }
+
+  .ssr-header p {
+    font-size: 14px;
+  }
+
+  .ssr-refresh {
+    width: 100%;
+  }
+
+  .ssr-navigation {
+    margin-bottom: 22px;
+  }
+
+  .ssr-summary {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .ssr-summary-card {
+    min-height: 165px;
+    padding: 21px;
+  }
+
+  .ssr-summary-card h2 {
+    font-size: 26px;
+  }
+
+  .ssr-panel {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .ssr-panel-heading h2 {
+    font-size: 19px;
+  }
+
+  .ssr-chart {
+    height: 280px;
+  }
+
+  .ssr-footer {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .ssr-summary-card,
+  .ssr-refresh,
+  .ssr-chart-bar,
+  .ssr-products-link,
+  .ssr-table tbody tr {
+    transition: none;
+  }
+}

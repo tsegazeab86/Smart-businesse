@@ -1,0 +1,139 @@
+
+.osh-card {
+  padding: 24px;
+  border: 1px solid #e5eaf2;
+  border-radius: 16px;
+  background: #fff;
+  color: #17233e;
+}
+
+.osh-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.osh-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.osh-heading span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.osh-heading h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.osh-timeline {
+  padding-left: 9px;
+}
+
+.osh-entry {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 26px;
+}
+
+.osh-entry:not(:last-child)::before {
+  position: absolute;
+  top: 35px;
+  bottom: 0;
+  left: 16px;
+  width: 2px;
+  background: #e2e8f0;
+  content: "";
+}
+
+.osh-entry:last-child {
+  padding-bottom: 0;
+}
+
+.osh-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.osh-delivered .osh-marker {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.osh-cancelled .osh-marker {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.osh-entry-content {
+  flex: 1;
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.osh-entry-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.osh-entry-top strong {
+  color: #0f172a;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.osh-entry-top time {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.osh-entry-content p {
+  margin: 9px 0 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.osh-entry-content small {
+  display: block;
+  margin-top: 7px;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.osh-message {
+  margin: 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .osh-card { padding: 18px 14px; }
+  .osh-entry-top { flex-direction: column; gap: 5px; }
+}

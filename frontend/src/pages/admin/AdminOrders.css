@@ -1,0 +1,294 @@
+
+.ao-page {
+  min-height: 80vh;
+  padding: 42px 20px 80px;
+  background: #f6f8fc;
+  color: #172033;
+}
+
+.ao-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.ao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.ao-eyebrow {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ao-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.ao-header p {
+  color: #64748b;
+  margin: 0;
+}
+
+.ao-refresh,
+.ao-next,
+.ao-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 13px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ao-refresh {
+  background: #172033;
+  color: white;
+}
+
+.ao-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ao-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  background: white;
+  border: 1px solid #e8edf5;
+  border-radius: 15px;
+}
+
+.ao-summary span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.ao-summary strong {
+  font-size: 29px;
+}
+
+.ao-panel {
+  background: white;
+  border: 1px solid #e8edf5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.ao-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.ao-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 420px);
+  padding: 0 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+}
+
+.ao-search input {
+  width: 100%;
+  padding: 12px 0;
+  border: 0;
+  outline: none;
+  font: inherit;
+}
+
+.ao-toolbar select {
+  padding: 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  background: white;
+  font: inherit;
+}
+
+.ao-table-wrap {
+  overflow-x: auto;
+}
+
+.ao-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ao-table th,
+.ao-table td {
+  padding: 18px;
+  border-bottom: 1px solid #edf0f5;
+  vertical-align: middle;
+}
+
+.ao-table th {
+  background: #fafbfd;
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.ao-table td {
+  font-size: 13px;
+}
+
+.ao-table td small {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+}
+
+.ao-money {
+  font-weight: 800;
+}
+
+.ao-status,
+.ao-payment {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.ao-status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.ao-status-confirmed {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.ao-status-shipped {
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+.ao-status-delivered {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.ao-status-cancelled {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.ao-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ao-view {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.ao-next {
+  color: white;
+  background: #172033;
+}
+
+.ao-next:disabled,
+.ao-refresh:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ao-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.ao-error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.ao-success {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.ao-empty {
+  padding: 65px 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.ao-empty svg {
+  margin-bottom: 10px;
+}
+
+.ao-empty h3 {
+  color: #172033;
+}
+
+@media (max-width: 850px) {
+  .ao-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ao-page {
+    padding: 25px 12px 55px;
+  }
+
+  .ao-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ao-toolbar {
+    flex-direction: column;
+  }
+
+  .ao-search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ao-summary {
+    gap: 10px;
+  }
+
+  .ao-summary > div {
+    padding: 15px;
+  }
+}

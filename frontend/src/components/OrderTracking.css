@@ -1,0 +1,153 @@
+
+.ot-wrapper {
+  padding: 23px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+
+.ot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.ot-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ot-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 17px;
+}
+
+.ot-status {
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.ot-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ot-status-confirmed {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.ot-status-shipped {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.ot-status-delivered {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.ot-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ot-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.ot-step:not(:last-child)::after {
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 25px);
+  width: calc(100% - 50px);
+  height: 3px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  content: "";
+}
+
+.ot-step.ot-active:not(.ot-current)::after {
+  background: #2563eb;
+}
+
+.ot-step-circle {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50%;
+  background: white;
+}
+
+.ot-active .ot-step-circle {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: white;
+}
+
+.ot-current .ot-step-circle {
+  box-shadow: 0 0 0 5px #dbeafe;
+}
+
+.ot-step strong {
+  font-size: 12px;
+}
+
+.ot-active strong {
+  color: #1d4ed8;
+}
+
+.ot-step small {
+  font-size: 10px;
+}
+
+.ot-cancelled {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.ot-cancelled p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .ot-wrapper { padding: 16px 10px; }
+  .ot-step-circle { width: 34px; height: 34px; }
+  .ot-step-circle svg { width: 15px; }
+  .ot-step:not(:last-child)::after {
+    top: 16px;
+    left: calc(50% + 20px);
+    width: calc(100% - 40px);
+  }
+  .ot-step strong { font-size: 10px; }
+  .ot-step small { font-size: 9px; }
+}
